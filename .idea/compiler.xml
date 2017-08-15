@@ -9,13 +9,8 @@
         <module name="config-server" />
         <module name="movies" />
         <module name="recomendations" />
-        <module name="service-discovery" />
-      </profile>
-      <profile name="Annotation profile for microservices" enabled="true">
-        <sourceOutputDir name="../recomendations/target/generated-sources/annotations" />
-        <sourceTestOutputDir name="../recomendations/target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
         <module name="recommendations" />
+        <module name="service-discovery" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
