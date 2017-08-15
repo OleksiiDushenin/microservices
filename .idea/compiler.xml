@@ -11,12 +11,19 @@
         <module name="recomendations" />
         <module name="service-discovery" />
       </profile>
+      <profile name="Annotation profile for microservices" enabled="true">
+        <sourceOutputDir name="../recomendations/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../recomendations/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="recommendations" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="config-server" target="1.5" />
       <module name="microservices" target="1.5" />
       <module name="movies" target="1.5" />
       <module name="recomendations" target="1.5" />
+      <module name="recommendations" target="1.5" />
       <module name="service-discovery" target="1.5" />
     </bytecodeTargetLevel>
   </component>
