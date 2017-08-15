@@ -14,12 +14,12 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="config-server" target="1.5" />
-      <module name="microservices" target="1.5" />
-      <module name="movies" target="1.5" />
+      <module name="config-server" target="1.6" />
+      <module name="microservices" target="1.6" />
+      <module name="movies" target="1.6" />
       <module name="recomendations" target="1.5" />
-      <module name="recommendations" target="1.5" />
-      <module name="service-discovery" target="1.5" />
+      <module name="recommendations" target="1.6" />
+      <module name="service-discovery" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>

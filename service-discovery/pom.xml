@@ -13,6 +13,11 @@
     <name>microservices.service-discovery</name>
     <url>http://maven.apache.org</url>
 
+    <properties>
+        <docker.name>dushenin.oleksii.microservices.discovery</docker.name>
+        <docker.tag>${version}</docker.tag>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>

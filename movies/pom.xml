@@ -13,10 +13,23 @@
     <name>microservices.movies</name>
     <url>http://maven.apache.org</url>
 
+    <properties>
+        <docker.name>dushenin.oleksii.microservices.movies</docker.name>
+        <docker.tag>${version}</docker.tag>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-rsa</artifactId>
         </dependency>
     </dependencies>
 

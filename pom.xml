@@ -7,17 +7,24 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>movies</module>
-        <module>recomendations</module>
+        <module>recommendations</module>
         <module>config-server</module>
         <module>service-discovery</module>
     </modules>
     <packaging>pom</packaging>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.4.RELEASE</version>
+    </parent>
 
     <name>microservices</name>
     <url>http://maven.apache.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <docker.version>1.0.0</docker.version>
     </properties>
 
     <dependencyManagement>
@@ -37,6 +44,14 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>${docker.version}</version>
+                <configuration>
+                    <skipDockerBuild>true</skipDockerBuild>
+                </configuration>
             </plugin>
         </plugins>
     </build>
