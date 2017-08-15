@@ -1,6 +1,6 @@
 spring:
   application:
-    name: movies
+    name: recommendations
   profiles:
     active:
       default

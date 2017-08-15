@@ -1,3 +1,5 @@
 spring:
   application:
     name: recommendations
+server:
+  port: 8082
