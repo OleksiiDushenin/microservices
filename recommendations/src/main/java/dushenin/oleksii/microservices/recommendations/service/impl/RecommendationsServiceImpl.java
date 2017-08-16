@@ -20,6 +20,7 @@ public class RecommendationsServiceImpl implements RecommendationsService {
         return new Random()
                 .longs(FROM_BOUND, TO_BOUND + 1)
                 .filter(v -> !id.equals(v))
+                .distinct()
                 .limit(NUMBER_OF_RECOMMENDATIONS)
                 .boxed()
                 .collect(toList());

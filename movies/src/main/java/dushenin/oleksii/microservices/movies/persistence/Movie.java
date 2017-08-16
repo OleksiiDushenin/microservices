@@ -1,11 +1,11 @@
-package dushenin.oleksii.microservices.movies.web.dto;
+package dushenin.oleksii.microservices.movies.persistence;
 
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-@Builder
-public class MovieDto {
+@AllArgsConstructor
+public class Movie {
     private Long id;
     private String name;
     private String country;

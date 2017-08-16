@@ -20,7 +20,7 @@ public class RecommendationsController {
         this.recommendationsService = recommendationsService;
     }
 
-    @RequestMapping(value = "/{id}/recommendations", method = GET)
+    @RequestMapping(value = "/movies/{id}", method = GET)
     public RecommendationDto findRecommendations(@PathVariable("id") Long id) {
         return RecommendationDto.builder()
                 .id(id)
