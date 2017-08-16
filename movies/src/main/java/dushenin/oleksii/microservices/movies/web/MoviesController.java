@@ -25,7 +25,7 @@ public class MoviesController {
     }
 
     @RequestMapping(value = "/{id}/recommendations", method = GET)
-    public List<MovieDto> findRecommendations() {
+    public List<MovieDto> findRecommendations(@PathVariable("id") Long id) {
         return emptyList();
     }
 

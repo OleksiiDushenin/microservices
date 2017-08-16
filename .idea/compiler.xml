@@ -17,17 +17,12 @@
         <module name="service-discovery" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="config-server" target="1.6" />
-      <module name="microservices" target="1.6" />
-      <module name="microservices.config-server" target="1.6" />
-      <module name="microservices.movies" target="1.6" />
-      <module name="microservices.recomendations" target="1.6" />
-      <module name="microservices.service-discovery" target="1.6" />
-      <module name="movies" target="1.6" />
-      <module name="recomendations" target="1.5" />
-      <module name="recommendations" target="1.6" />
-      <module name="service-discovery" target="1.6" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="config-server" target="1.8" />
+      <module name="microservices" target="1.8" />
+      <module name="movies" target="1.8" />
+      <module name="recommendations" target="1.8" />
+      <module name="service-discovery" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
