@@ -1,6 +1,7 @@
 spring:
   cloud:
     config:
+      enabled: true
       server:
         encrypt:
           enabled: false
