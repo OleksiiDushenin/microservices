@@ -20,6 +20,10 @@
     <bytecodeTargetLevel target="1.8">
       <module name="config-server" target="1.8" />
       <module name="microservices" target="1.8" />
+      <module name="microservices.config-server" target="1.8" />
+      <module name="microservices.movies" target="1.8" />
+      <module name="microservices.recomendations" target="1.8" />
+      <module name="microservices.service-discovery" target="1.8" />
       <module name="movies" target="1.8" />
       <module name="recommendations" target="1.8" />
       <module name="service-discovery" target="1.8" />
