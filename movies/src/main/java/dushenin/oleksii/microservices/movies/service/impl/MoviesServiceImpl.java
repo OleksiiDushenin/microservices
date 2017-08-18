@@ -3,8 +3,8 @@ package dushenin.oleksii.microservices.movies.service.impl;
 import dushenin.oleksii.microservices.movies.persistence.Movie;
 import dushenin.oleksii.microservices.movies.persistence.repository.MoviesRepository;
 import dushenin.oleksii.microservices.movies.service.MoviesService;
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Service;
@@ -52,15 +52,19 @@ public class MoviesServiceImpl implements MoviesService {
 
     private List<Long> queryForRecommendations(Long id) {
         return restTemplate.exchange(
-                fromHttpUrl(recommendationsKey + "/{id}").buildAndExpand(id).toUriString(),
+                fromHttpUrl("http://" + recommendationsKey + "/recommendations/movies/{id}")
+                        .buildAndExpand(id)
+                        .toUriString(),
                 GET,
                 new HttpEntity(new HttpHeaders()),
-                getType()).getBody();
+                Recommendation.class)
+                .getBody().getRecommendations();
     }
 
-    private ParameterizedTypeReference<List<Long>> getType() {
-        return new ParameterizedTypeReference<List<Long>>() {
-        };
+    @Data
+    private static class Recommendation {
+        private Long id;
+        private List<Long> recommendations;
     }
 
 }
