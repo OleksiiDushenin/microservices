@@ -5,8 +5,12 @@
       <module fileurl="file://$PROJECT_DIR$/config-server/config-server.iml" filepath="$PROJECT_DIR$/config-server/config-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/microservices.iml" filepath="$PROJECT_DIR$/microservices.iml" />
       <module fileurl="file://$PROJECT_DIR$/config-server/microservices.config-server.iml" filepath="$PROJECT_DIR$/config-server/microservices.config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config-server/microservices.config-server.iml" filepath="$PROJECT_DIR$/config-server/microservices.config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/movies/microservices.movies.iml" filepath="$PROJECT_DIR$/movies/microservices.movies.iml" />
       <module fileurl="file://$PROJECT_DIR$/movies/microservices.movies.iml" filepath="$PROJECT_DIR$/movies/microservices.movies.iml" />
       <module fileurl="file://$PROJECT_DIR$/recommendations/microservices.recomendations.iml" filepath="$PROJECT_DIR$/recommendations/microservices.recomendations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/recommendations/microservices.recomendations.iml" filepath="$PROJECT_DIR$/recommendations/microservices.recomendations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-discovery/microservices.service-discovery.iml" filepath="$PROJECT_DIR$/service-discovery/microservices.service-discovery.iml" />
       <module fileurl="file://$PROJECT_DIR$/service-discovery/microservices.service-discovery.iml" filepath="$PROJECT_DIR$/service-discovery/microservices.service-discovery.iml" />
       <module fileurl="file://$PROJECT_DIR$/movies/movies.iml" filepath="$PROJECT_DIR$/movies/movies.iml" />
       <module fileurl="file://$PROJECT_DIR$/recommendations/recommendations.iml" filepath="$PROJECT_DIR$/recommendations/recommendations.iml" />

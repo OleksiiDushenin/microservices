@@ -1,5 +1,7 @@
 package dushenin.oleksii.microservices.movies.service.impl;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import dushenin.oleksii.microservices.movies.persistence.Movie;
 import dushenin.oleksii.microservices.movies.persistence.repository.MoviesRepository;
 import dushenin.oleksii.microservices.movies.service.MoviesService;
@@ -41,6 +43,24 @@ public class MoviesServiceImpl implements MoviesService {
     }
 
     @Override
+    @HystrixCommand(
+            commandProperties = {
+                    @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "2000"),
+                    @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"),
+                    @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "80"),
+                    @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "5000"),
+                    @HystrixProperty(name = "metrics.rollingStats.timeInMilliseconds", value = "15000"),
+                    @HystrixProperty(name = "metrics.rollingStats.numBuckets", value = "5")
+
+            },
+            fallbackMethod = "findDefaultRecommendations",
+            threadPoolKey = "recommendations",
+            threadPoolProperties = {
+                    @HystrixProperty(name = "coreSize", value = "30"),
+                    @HystrixProperty(name = "maxQueueSize", value = "10")
+            }
+
+    )
     public List<Movie> findRecommendations(Long id) {
         final List<Long> ids = queryForRecommendations(id);
         if (ids.isEmpty()) {
@@ -48,6 +68,10 @@ public class MoviesServiceImpl implements MoviesService {
         }
 
         return repository.findAll(ids);
+    }
+
+    private List<Movie> findDefaultRecommendations(Long id) {
+        return emptyList();
     }
 
     private List<Long> queryForRecommendations(Long id) {

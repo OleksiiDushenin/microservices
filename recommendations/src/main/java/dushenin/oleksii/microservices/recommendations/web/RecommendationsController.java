@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.concurrent.TimeUnit;
+
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 @RestController
@@ -22,6 +24,16 @@ public class RecommendationsController {
 
     @RequestMapping(value = "/movies/{id}", method = GET)
     public RecommendationDto findRecommendations(@PathVariable("id") Long id) {
+
+
+        if (Math.random() > 0.5) {
+            try {
+                TimeUnit.SECONDS.sleep(10);
+            } catch (InterruptedException e) {
+                throw new IllegalStateException(e);
+            }
+        }
+
         return RecommendationDto.builder()
                 .id(id)
                 .recommendations(recommendationsService.findRecommendations(id))
