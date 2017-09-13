@@ -26,7 +26,12 @@ public class ContextFilter implements Filter {
 
         MDC.put(CORRELATION_ID, correlationId);
 
-        chain.doFilter(request, response);
+        try {
+            chain.doFilter(request, response);
+        } finally {
+            MDC.clear();
+        }
+
     }
 
     @Override
