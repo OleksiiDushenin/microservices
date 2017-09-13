@@ -47,7 +47,7 @@ public class ContextStrategy extends HystrixConcurrencyStrategy {
     @Override
     public <T> Callable<T> wrapCallable(Callable<T> callable) {
         return delegate != null
-                ? delegate.wrapCallable(new ContextCallable<>(callable, getContext().orElseGet(null)))
-                : super.wrapCallable(new ContextCallable<>(callable, getContext().orElseGet(null)));
+                ? delegate.wrapCallable(new ContextCallable<>(callable, getContext().orElse(null)))
+                : super.wrapCallable(new ContextCallable<>(callable, getContext().orElse(null)));
     }
 }

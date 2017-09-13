@@ -13,12 +13,8 @@ import javax.annotation.PostConstruct;
 
 @Configuration
 public class HystrixConfiguration {
-    private final HystrixConcurrencyStrategy delegate;
-
     @Autowired(required = false)
-    public HystrixConfiguration(HystrixConcurrencyStrategy delegate) {
-        this.delegate = delegate;
-    }
+    private HystrixConcurrencyStrategy delegate;
 
     @PostConstruct
     public void init() {

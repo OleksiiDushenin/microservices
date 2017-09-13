@@ -26,11 +26,11 @@ public class RecommendationsController {
 
     @RequestMapping(value = "/movies/{id}", method = GET)
     public RecommendationDto findRecommendations(@PathVariable("id") Long id) {
-        log.debug("Searching recommendations for movie '{}' ...", id);
+        log.info("Searching recommendations for movie '{}' ...", id);
 
         if (Math.random() > 0.5) {
             try {
-                log.debug("Long running service ...");
+                log.info("Long running service ...");
                 TimeUnit.SECONDS.sleep(10);
             } catch (InterruptedException e) {
                 throw new IllegalStateException(e);

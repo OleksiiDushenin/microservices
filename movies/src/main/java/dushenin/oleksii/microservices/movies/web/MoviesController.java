@@ -30,13 +30,13 @@ public class MoviesController {
 
     @RequestMapping(method = GET)
     public List<MovieDto> findAll() {
-        log.debug("Searching for all movies ...");
+        log.info("Searching for all movies ...");
         return moviesMapper.toDto(moviesService.findAll());
     }
 
     @RequestMapping(value = "/{id}", method = GET)
     public MovieDto findOne(@PathVariable("id") Long id) {
-        log.debug("Searching for movie '{}' ...", id);
+        log.info("Searching for movie '{}' ...", id);
         return moviesService.findOne(id)
                 .map(moviesMapper::toDto)
                 .orElseThrow(() -> new MovieNotFoundException(id));
@@ -44,7 +44,7 @@ public class MoviesController {
 
     @RequestMapping(value = "/{id}/recommendations", method = GET)
     public List<MovieDto> findRecommendations(@PathVariable("id") Long id) {
-        log.debug("Searching recommendations for movie '{}' ...", id);
+        log.info("Searching recommendations for movie '{}' ...", id);
         return moviesMapper.toDto(moviesService.findRecommendations(id));
     }
 

@@ -3,6 +3,7 @@ package dushenin.oleksii.microservices.common.web;
 import dushenin.oleksii.microservices.common.Context;
 import dushenin.oleksii.microservices.common.ContextHolder;
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
+import org.slf4j.MDC;
 
 import javax.servlet.*;
 import java.io.IOException;
@@ -20,8 +21,10 @@ public class ContextFilter implements Filter {
             throws IOException, ServletException {
 
         final HttpServletRequest servletRequest = (HttpServletRequest) request;
-        final String correlationId = (String) servletRequest.getAttribute(CORRELATION_ID);
+        final String correlationId = servletRequest.getHeader(CORRELATION_ID);
         ContextHolder.setContext(new Context(correlationId));
+
+        MDC.put(CORRELATION_ID, correlationId);
 
         chain.doFilter(request, response);
     }
