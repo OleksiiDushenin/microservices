@@ -1,0 +1,13 @@
+zuul:
+  prefix: /api
+
+spring:
+  application:
+    name: zuulserver
+  profiles:
+    active:
+      default
+  cloud:
+    config:
+      uri: http://localhost:8888
+      enabled: true

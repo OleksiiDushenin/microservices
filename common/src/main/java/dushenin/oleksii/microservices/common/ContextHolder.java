@@ -4,7 +4,7 @@ import java.util.Optional;
 
 public class ContextHolder {
 
-    public static final String CORRELATION_ID = "CorrelationId";
+    public static final String CORRELATION_ID = "correlation-id";
     private static final ThreadLocal<Context> CONTEXT = new ThreadLocal<>();
 
     public static void setContext(Context context) {
