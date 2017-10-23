@@ -15,7 +15,7 @@
 
     <properties>
         <docker.name>dushenin.oleksii.microservices.zuul</docker.name>
-        <docker.tag>${version}</docker.tag>
+        <docker.tag>${env.BUILD_NAME}</docker.tag>
     </properties>
 
     <dependencies>

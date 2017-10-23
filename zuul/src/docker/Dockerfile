@@ -2,10 +2,15 @@ FROM openjdk:8
 
 RUN apt -y update
 RUN apt -y upgrade
+RUN apt -y install netcat
 
-COPY . /usr/services/microservices/zuul
-WORKDIR /usr/services/microservices/zuul
+RUN mkdir -p /usr/services/microservices/zuul
+ADD @project.build.finalName@.jar /usr/services/microservices/zuul
+ADD run.sh /usr/services/microservices/zuul
 
 EXPOSE 5555
 
-CMD ["java", "-jar", "@project.build.finalName@.jar"]
+WORKDIR /usr/services/microservices/zuul
+
+RUN chmod +x run.sh
+CMD ./run.sh
