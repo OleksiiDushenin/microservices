@@ -6,4 +6,6 @@ echo "********************************************************"
 while ! `nc -z config-server 8888`; do sleep 3; done
 echo "**"
 
+export ENCRYPT_KEY=changeme
+
 java -jar /usr/services/microservices/service-discovery/@project.build.finalName@.jar

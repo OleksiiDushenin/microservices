@@ -12,4 +12,6 @@ echo "********************************************************"
 while ! `nc -z discovery 8761`; do sleep 3; done
 echo "**"
 
+export ENCRYPT_KEY=changeme
+
 java -jar /usr/services/microservices/movies/@project.build.finalName@.jar
