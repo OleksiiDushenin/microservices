@@ -12,6 +12,12 @@ echo "********************************************************"
 while ! `nc -z discovery 8761`; do sleep 3; done
 echo "**"
 
+echo "********************************************************"
+echo "Waiting for the zipkin server to start on port 8762"
+echo "********************************************************"
+while ! `nc -z zipkin 8762`; do sleep 3; done
+echo "**"
+
 export ENCRYPT_KEY=changeme
 
 java -jar /usr/services/microservices/zuul/@project.build.finalName@.jar

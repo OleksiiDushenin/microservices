@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: zipkin
+  profiles:
+    active:
+      default
+
+server:
+  port: 8762
+
+logging:
+  level:
+    com.netflix: WARN
+    org.springframework.web: WARN
+    dushenin: DEBUG

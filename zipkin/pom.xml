@@ -7,33 +7,25 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>microservices.zuul</artifactId>
+    <artifactId>microservices.zipkin</artifactId>
     <packaging>jar</packaging>
 
-    <name>microservices.zuul</name>
+    <name>microservices.zipkin</name>
     <url>http://maven.apache.org</url>
 
     <properties>
-        <docker.name>dushenin.oleksii.microservices.zuul</docker.name>
+        <docker.name>dushenin.oleksii.microservices.zipkin</docker.name>
         <docker.tag>${env.BUILD_NAME}</docker.tag>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zuul</artifactId>
+            <groupId>io.zipkin.java</groupId>
+            <artifactId>zipkin-server</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-sleuth</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-sleuth-zipkin</artifactId>
+            <groupId>io.zipkin.java</groupId>
+            <artifactId>zipkin-autoconfigure-ui</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>

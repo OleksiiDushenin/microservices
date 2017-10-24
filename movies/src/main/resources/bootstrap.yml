@@ -8,3 +8,5 @@ spring:
     config:
       uri: http://config-server:8888
       enabled: true
+  zipkin:
+    baseUrl:  http://zipkin:8762
