@@ -20,3 +20,8 @@ services:
     image: dushenin.oleksii.microservices.zuul:${BUILD_NAME}
     ports:
       - "5555:5555"
+  logspout:
+    image: gliderlabs/logspout
+    command: syslog://logs6.papertrailapp.com:51747
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
