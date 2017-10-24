@@ -1,3 +1,16 @@
+spring:
+  application:
+    name: movies
+  profiles:
+    active:
+      default
+  cloud:
+    config:
+      uri: http://config-server:8888
+      enabled: true
+  zipkin:
+    baseUrl:  http://zipkin:8762
+
 server:
   port: 8081
 
