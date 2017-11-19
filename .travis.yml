@@ -1,0 +1,26 @@
+language: java
+jdk:
+- oraclejdk8
+cache:
+  directories:
+  - "$HOME/.m2"
+sudo: required
+services:
+- docker
+notifications:
+  email:
+  - alexey.dushenin@gmail.com
+  on_success: always
+  on_failure: always
+branches:
+  only:
+  - master
+env:
+  global:
+  - secure: SzlMZQTM1ql+rA4bnF1khpD/Stlw5/9tprMfEnaS666zn4TMjcXKzlOeoBFwu7YVGBPlWNofxlMkp++uOYz+cKZ06E5jPwcZJiNCy/t6a+Ihqlsp9Kmn7RzLq1GVjDC4Ox+GiRywfBb3u7SpnF0kKt0YtXGqn5ENupjrH5IjKzHmn3WqpF18QF468xxjaPNpAAg2ufHVbnfhaFhpWMCVDoB7WqrJQ1FmiOVKuGizaGYXSxeluOPvkDdJ+G2lFkMtFjz5HquJp9qXbCukgt6G0UTbvBZhmIY0lqkdFtBjrEfhWYkTatyQR6ou1WQuYnPCtWh2GSmy5K2NHywCrjAVbRrMEvbwoTbAzT68eToLR1oWXpUR5f08Y1mDA4BDv4PmsAYkptTL87qN/y/4tDr+GmU7dM0gkEOEVY1iUisjCAkEIMPp0rDcSXZjN9nIYALeovWo9llGNQX6jw1NigIPAa8cGf6lb3OOQS7urcxa92zLTRUSY0SH7zOF3j7Ksx112RHsa3x7oizW/uDiDwgxtdb+7bGRW07/OGEy8Tzu4RoKkBoIS70oNpFnYj47T4JqMgrPq5Si1H/Exa2Tx/gIjUr+VQ5gFlAEA84S/o9mNKegD2aynVR7A4PxagJhlXSJa+gSxYRFYZi8TZYrDB9fcLXjPw8N/NrrZR7gvFxezKY=
+  - secure: hnfPhRGhDoOyNgK6ajiZ7vA+HdLIvKquj/IGh6TQtiSLLjsok74PjqCs3VHnQ2FCkdFP13Y3bhnI3sDuOC4xEskz17sMK5tvAuEbgSTqbu+GmjJU052kD526Z1Mfme0EuowGfXz37vtWNEb5sTlVSb9Ra1XE+to2xYSXZsYIlVdQ1iHoc0IikHlMXy/7eKNxKqM6i13kJOfpPcXFtkwg4355VMo3Att87tHDm+KkWzGajhsjI4gyg9TrdxcZgNf1XZZOuIO5uh3BqtPuqYkg5DMSybcGSlARiAUpAQBIZdzQkgNZdUnNvDKgOYZAiQH8Zbn0CsDlBm/ZsbpkYz7CqTM4MgBcOEg0JPNetejWEqcI5BWmaKmsdVFZJFYPRu1AFFMQ3WNYCf5yg4D5jo3P7hBTwWykddAwN4ECN45KMGJ3qzXoCvhUJJw4CMtJTMSR8umAz9HcSpl34/uDAdaS8Jw54EkO2tOMyLjh0YAtNCZvxxW78ikc++tbd8JfxoCGynWzrmgNKxqi3LtkGahCCRm7ptMsywVBqi3F0KCPlbG/aP7d+lgxsvTJLUlhj2MFYfhr5n2b+SMzQnvtxgJB6TRrqyp61rt5l1Uvln1OxQkTI1mssZ2vx6/ifhzbnT18RbxhXd7ie56l1QtI4gM2rtOOUOIYWmqjWn5ge0RU7WU=
+before_install:
+- export BUILD_NAME=1.0
+script:
+- sh travis/build.sh
+- sh travis/push_to_docker_hub.sh
