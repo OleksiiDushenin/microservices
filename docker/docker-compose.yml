@@ -8,11 +8,11 @@ services:
     image: dushenin.oleksii.microservices.zipkin:${BUILD_NAME}
     ports:
       - "8762:8762"
-  movies:
+  moviesservice:
     image: dushenin.oleksii.microservices.movies:${BUILD_NAME}
     ports:
         - "8081:8081"
-  recommendations:
+  recommendationsservice:
     image: dushenin.oleksii.microservices.recommendations:${BUILD_NAME}
     ports:
       - "8082:8082"

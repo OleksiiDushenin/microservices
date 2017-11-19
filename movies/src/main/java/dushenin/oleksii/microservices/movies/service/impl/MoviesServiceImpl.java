@@ -22,7 +22,7 @@ import static org.springframework.web.util.UriComponentsBuilder.fromHttpUrl;
 @Service
 public class MoviesServiceImpl implements MoviesService {
     // TODO externalize
-    private String recommendationsKey = "recommendations";
+    private String recommendationsKey = "recommendationsservice";
     private final MoviesRepository repository;
     private final RestTemplate restTemplate;
 
