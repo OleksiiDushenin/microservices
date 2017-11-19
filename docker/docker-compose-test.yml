@@ -1,0 +1,31 @@
+version: '3'
+services:
+  config-server:
+    image: dushenin.oleksii.microservices.config:${BUILD_NAME}
+    ports:
+      - "8888:8888"
+  zipkin:
+    image: dushenin.oleksii.microservices.zipkin:${BUILD_NAME}
+    ports:
+      - "8762:8762"
+  moviesservice:
+    image: dushenin.oleksii.microservices.movies:${BUILD_NAME}
+    ports:
+        - "8081:8081"
+  recommendationsservice:
+    image: dushenin.oleksii.microservices.recommendations:${BUILD_NAME}
+    ports:
+      - "8082:8082"
+  discovery:
+    image: dushenin.oleksii.microservices.discovery:${BUILD_NAME}
+    ports:
+      - "8761:8761"
+  zuul:
+    image: dushenin.oleksii.microservices.zuul:${BUILD_NAME}
+    ports:
+      - "5555:5555"
+  logspout:
+    image: gliderlabs/logspout
+    command: syslog://logs6.papertrailapp.com:51747
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
