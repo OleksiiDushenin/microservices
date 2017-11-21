@@ -29,5 +29,17 @@ local machine:
 
 ### Test purposes
 
+### Required tools
+
+In order to run application next tools should be installed on your 
+local machine:
+- `docker`
+- `maven`
+
+### Deployment procedure
+- Run `microservices.sh` file
+
+### Endpoints
+
 TBD
 
