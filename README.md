@@ -12,31 +12,42 @@ TBD
 
 ## Technology stack
 
-TBD
+- `Spring Boot`
+- `Spring Cloud. Zuul`
+- `Spring Cloud. Eureka`
+- `Spring Cloud. Hystrix`
+- `Spring Cloud. Ribbon`
+- `Spring Cloud. Config Server`
+- `Spring Cloud. Sleuth`
+- `Zipkin`
+- `Pappertrail`
+- `Docker`
+- `Maven`
+- `Travis CI`
 
 ## Build procedure
 
 ### Run application
 
-### Required tools
+#### Required tools
 
 In order to run application next tools should be installed on your 
 local machine:
 - `docker`
 
-### Deployment procedure
+#### Deployment procedure
 - Run `run.sh` file
 
 ### Test purposes
 
-### Required tools
+#### Required tools
 
 In order to run application next tools should be installed on your 
 local machine:
 - `docker`
 - `maven`
 
-### Deployment procedure
+#### Deployment procedure
 - Run `microservices.sh` file
 
 ### Endpoints
