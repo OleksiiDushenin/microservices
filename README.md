@@ -64,7 +64,7 @@ curl http://localhost:5555/api/moviesservice/movies/1
 `Recommendations`:
 
 ```shell
-curl http://localhost:5555/api/moviesservicmovies/1/recommendations
+curl http://localhost:5555/api/moviesservice/movies/1/recommendations
 
 [{"id":4,"name":"Name 4","country":"US","year":1994,"description":"Description 4"},{"id":5,"name":"Name 5","country":"US","year":1995,"description":"Description 5"},{"id":7,"name":"Name 7","country":"US","year":1997,"description":"Description 7"},{"id":8,"name":"Name 8","country":"US","year":1998,"description":"Description 8"},{"id":9,"name":"Name 9","country":"US","year":1999,"description":"Description 9"}]
 
