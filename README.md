@@ -9,17 +9,52 @@ for separate version management and responsibility separation.
 ## Architecture
 
 ```
-                |               
-                v
-        -----------------
-        |               |
-        |     Zuul      |
-        |               |
-        -----------------
-                |
-                v
-                   
-                
+                                |               
+                                v
+                        xxxxxxxxxxxxxxxxx
+                        x               x
+                        x     Zuul      x------------------------
+                        x               x                       |
+                        xxxxxxxxxxxxxxxxx                       |
+                                |                               |
+                                v                               |
+                        xxxxxxxxxxxxxxxxx                       |
+                        x               x                       |
+                        x     Eureka    x-----------------------|
+                        x               x                       |
+                        xxxxxxxxxxxxxxxxx                       |
+                                |                               |
+                      ------------------------                  |
+                      |                      |                  |
+                      v                      v                  |
+             xxxxxxxxxxxxxxxxx      xxxxxxxxxxxxxxxxx           |
+             x               x      x               x           |
+             x     Movies    x ---> xRecommendationsx           |
+             x               x      x               x           |
+             xxxxxxxxxxxxxxxxx      xxxxxxxxxxxxxxxxx           |
+                      |                      |                  |
+                      ------------------------------------------|
+                                |                               |
+                                v                               |
+                        xxxxxxxxxxxxxxxxx                       |
+                        x               x                       |
+                        x Cloud Config  x                       |
+                        x               x                       |
+                        xxxxxxxxxxxxxxxxx                       |
+                                                                |
+                                                                |
+                                                                |
+             ----------------------------------------------------                                                               
+            |                   |                       |
+            v                   v                       v
+ xxxxxxxxxxxxxxxxx      xxxxxxxxxxxxxxxxx     xxxxxxxxxxxxxxxxx
+ x               x      x               x     x               x
+ x     Sleuth    x      x   Zipkin      x     x  Pappertrail  x
+ x               x      x               x     x               x
+ xxxxxxxxxxxxxxxxx      xxxxxxxxxxxxxxxxx     xxxxxxxxxxxxxxxxx
+
+
+
 
 ```
 
