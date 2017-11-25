@@ -30,7 +30,7 @@ for separate version management and responsibility separation.
              xxxxxxxxxxxxxxxxx      xxxxxxxxxxxxxxxxx           |
              x               x      x               x           |
              x     Movies    x ---> xRecommendationsx           |
-             x               x      x               x           |
+             xHystrix/Ribbon x      x               x           |
              xxxxxxxxxxxxxxxxx      xxxxxxxxxxxxxxxxx           |
                       |                      |                  |
                       ------------------------------------------|
