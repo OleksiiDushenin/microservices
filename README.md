@@ -8,7 +8,20 @@ for separate version management and responsibility separation.
 
 ## Architecture
 
-TBD
+```
+                |               
+                v
+        -----------------
+        |               |
+        |     Zuul      |
+        |               |
+        -----------------
+                |
+                v
+                   
+                
+
+```
 
 ## Technology stack
 
